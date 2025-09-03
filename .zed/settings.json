@@ -46,6 +46,17 @@
         "!vtsls",
         "!eslint",
         "..."
+      ],
+
+      "prettier": { "allowed": false },
+      "formatter": [
+        { "language_server": { "name": "biome" } },
+        {
+          "code_actions": {
+            "source.fixAll.ts": true,
+            "source.fixAll.biome": true
+          }
+        }
       ]
     },
     "TSX": {
@@ -56,6 +67,17 @@
         "!eslint",
         "!vtsls",
         "..."
+      ],
+
+      "prettier": { "allowed": false },
+      "formatter": [
+        { "language_server": { "name": "biome" } },
+        {
+          "code_actions": {
+            "source.fixAll.ts": true,
+            "source.fixAll.biome": true
+          }
+        }
       ]
     },
     "JavaScript": {
@@ -66,6 +88,17 @@
         "!eslint",
         "!vtsls",
         "..."
+      ],
+
+      "prettier": { "allowed": false },
+      "formatter": [
+        { "language_server": { "name": "biome" } },
+        {
+          "code_actions": {
+            "source.fixAll.ts": true,
+            "source.fixAll.biome": true
+          }
+        }
       ]
     }
   }
