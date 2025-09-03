@@ -40,12 +40,18 @@
 
   "languages": {
     "TypeScript": {
-      "language_servers": ["typescript-language-server", "!vtsls", "..."]
+      "language_servers": [
+        "typescript-language-server",
+        "biome",
+        "!vtsls",
+        "..."
+      ]
     },
     "TSX": {
       "language_servers": [
         "typescript-language-server",
         "tailwindcss-language-server",
+        "biome",
         "!vtsls",
         "..."
       ]
@@ -54,6 +60,7 @@
       "language_servers": [
         "typescript-language-server",
         "tailwindcss-language-server",
+        "biome",
         "!vtsls",
         "..."
       ]
