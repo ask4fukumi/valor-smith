@@ -1,0 +1,62 @@
+// $language_server
+// $debugger
+// $formatter
+// $language-specific
+// $agent
+// $context_server
+
+{
+  // $language_server
+
+  "lsp": {
+    "typescript-language-server": {
+      "binary": {
+        "path": "bunx",
+        "arguments": ["--bun", "typescript-language-server", "--stdio"]
+      }
+    },
+
+    "tailwindcss-language-server": {
+      "binary": {
+        "path": "bunx",
+        "arguments": ["--bun", "tailwindcss-language-server", "--stdio"]
+      },
+
+      "settings": {
+        "classAttributes": ["className"],
+        "classFunctions": []
+      }
+    },
+
+    "biome": {
+      "binary": {
+        "path": "bunx",
+        "arguments": ["--bun", "biome", "lsp-proxy"]
+      }
+    }
+  },
+
+  // $language-specific
+
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["typescript-language-server", "!vtsls", "..."]
+    },
+    "TSX": {
+      "language_servers": [
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "!vtsls",
+        "..."
+      ]
+    },
+    "JavaScript": {
+      "language_servers": [
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "!vtsls",
+        "..."
+      ]
+    }
+  }
+}
