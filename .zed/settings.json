@@ -12,14 +12,14 @@
     "typescript-language-server": {
       "binary": {
         "path": "bunx",
-        "arguments": ["typescript-language-server", "--stdio"]
+        "arguments": ["--bun", "typescript-language-server", "--stdio"]
       }
     },
 
     "tailwindcss-language-server": {
       "binary": {
         "path": "bunx",
-        "arguments": ["tailwindcss-language-server", "--stdio"]
+        "arguments": ["--bun", "tailwindcss-language-server", "--stdio"]
       },
 
       "settings": {
@@ -31,7 +31,7 @@
     "biome": {
       "binary": {
         "path": "bunx",
-        "arguments": ["biome", "lsp-proxy"]
+        "arguments": ["--bun", "biome", "lsp-proxy"]
       }
     }
   },
