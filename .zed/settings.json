@@ -33,6 +33,13 @@
         "path": "bunx",
         "arguments": ["--bun", "biome", "lsp-proxy"]
       }
+    },
+
+    "vscode-css-language-server": {
+      "binary": {
+        "path": "bunx",
+        "arguments": ["--bun", "vscode-css-language-server", "--stdio"]
+      }
     }
   },
 
@@ -100,6 +107,17 @@
           }
         }
       ]
+    },
+
+    "CSS": {
+      "language_servers": [
+        "vscode-css-language-server",
+        "tailwindcss-language-server",
+        "..."
+      ],
+
+      "format_on_save": "on",
+      "formatter": [{ "language_server": { "name": "vscode-css-language-server" } }]
     }
   }
 }
