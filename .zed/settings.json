@@ -3,6 +3,7 @@
 // $formatter
 // $language-specific
 // $agent
+// $agent_server
 // $context_server
 
 {
@@ -131,6 +132,16 @@
 
       "format_on_save": "on",
       "formatter": [{ "language_server": { "name": "vscode-css-language-server" } }]
+    }
+  },
+
+  // $context_server
+
+  "context_servers": {
+    "mcp-server-shadcn": {
+      "source": "custom",
+      "command": "bunx",
+      "args": ["--bun", "shadcn@latest", "mcp"]
     }
   }
 }
