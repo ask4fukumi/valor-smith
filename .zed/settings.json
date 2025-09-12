@@ -39,6 +39,14 @@
       "binary": {
         "path": "bunx",
         "arguments": ["--bun", "vscode-css-language-server", "--stdio"]
+      },
+
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
       }
     }
   },
