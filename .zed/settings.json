@@ -43,6 +43,11 @@
     }
   },
 
+  // $formatter
+
+  "preferred_line_length": 89,
+  "tab_size": 2,
+
   // $language-specific
 
   "languages": {
