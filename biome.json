@@ -24,7 +24,10 @@
         "useSortedClasses": {
           "fix": "safe",
           "level": "warn",
-          "options": { "attributes": ["className"], "functions": [] }
+          "options": {
+            "attributes": ["className"],
+            "functions": ["cn", "cva", "clsx", "tw", "tw\\.[a-z-]+"]
+          }
         }
       },
       "suspicious": {

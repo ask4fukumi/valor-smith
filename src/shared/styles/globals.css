@@ -41,6 +41,14 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme {
+  /* Breakpoints */
+  --breakpoint-sm: 377px;
+  --breakpoint-md: 610px;
+  --breakpoint-lg: 987px;
+  --breakpoint-xl: 1597px;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -114,6 +122,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

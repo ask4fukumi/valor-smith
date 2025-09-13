@@ -10,7 +10,7 @@
 {
   // $privacy
 
-  "redact_private_values": true,
+  "redact_private_values": false,
   "private_files": ["**/*.env*"],
 
   // $language_server
@@ -31,7 +31,7 @@
 
       "settings": {
         "classAttributes": ["className"],
-        "classFunctions": []
+        "classFunctions": ["cn", "cva", "clsx", "tw", "tw\\.[a-z-]+"]
       }
     },
 
