@@ -1,11 +1,11 @@
 "use server"
 
 import { StackProvider, StackTheme } from "@stackframe/stack"
-import { stackServerApp } from "@/shared/infra/stack-auth"
+import { authApp } from "@/shared/infra/stack-auth"
 
 const RootProvider = async ({ children }: React.PropsWithChildren) => {
   return (
-    <StackProvider app={stackServerApp}>
+    <StackProvider app={authApp}>
       <StackTheme>{children}</StackTheme>
     </StackProvider>
   )

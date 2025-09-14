@@ -1,1 +1,1 @@
-export * from "./stack-server-app"
+export * from "./auth-app"

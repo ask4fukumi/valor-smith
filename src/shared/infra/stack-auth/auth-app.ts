@@ -2,7 +2,7 @@ import "server-only"
 
 import { StackServerApp } from "@stackframe/stack"
 
-const stackServerApp = new StackServerApp({
+const authApp = new StackServerApp({
   tokenStore: "nextjs-cookie",
 
   urls: {
@@ -10,4 +10,4 @@ const stackServerApp = new StackServerApp({
   },
 })
 
-export { stackServerApp }
+export { authApp }

@@ -5,13 +5,13 @@ import "@/shared/styles/globals.css"
 import { UserButton } from "@stackframe/stack"
 import type { Route } from "next"
 import Link from "next/link"
-import { stackServerApp } from "@/shared/infra/stack-auth"
+import { authApp } from "@/shared/infra/stack-auth"
 import { cn } from "@/shared/lib/utils"
 import { Button } from "@/shared/ui/components/button"
 import { RootProvider } from "./root-provider"
 
 const RootLayout = async ({ children }: LayoutProps<"/">) => {
-  const user = await stackServerApp.getUser()
+  const user = await authApp.getUser()
 
   return (
     <html lang="vi">
