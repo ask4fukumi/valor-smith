@@ -3,7 +3,7 @@ import "server-only"
 import { neon } from "@neondatabase/serverless"
 import { drizzle } from "drizzle-orm/neon-http"
 import { env } from "@/config/env"
-import { params } from "./params"
+import { params } from "../params"
 
 /**
  * Use this in edge runtime (like API routes).

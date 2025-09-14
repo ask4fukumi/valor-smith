@@ -1,4 +1,4 @@
-export * from "./db"
-export * from "./get-db"
+export * from "./client/db"
+export * from "./client/get-db"
+export * from "./client/with-db"
 export * from "./schema"
-export * from "./with-db"
