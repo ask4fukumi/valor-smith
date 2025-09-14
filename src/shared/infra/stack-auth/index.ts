@@ -1,1 +1,1 @@
-export { stackServerApp } from "./stack-server-app"
+export * from "./stack-server-app"
