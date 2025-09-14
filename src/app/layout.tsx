@@ -8,7 +8,7 @@ import Link from "next/link"
 import { stackServerApp } from "@/shared/infra/stack-auth"
 import { cn } from "@/shared/lib/utils"
 import { Button } from "@/shared/ui/components/button"
-import { RootProvider } from "@/ui/providers"
+import { RootProvider } from "./root-provider"
 
 const RootLayout = async ({ children }: LayoutProps<"/">) => {
   const user = await stackServerApp.getUser()
