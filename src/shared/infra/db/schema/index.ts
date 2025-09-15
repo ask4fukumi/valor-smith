@@ -1,5 +1,19 @@
-import { relations, sql } from "drizzle-orm"
-import { check, index, integer, pgTable, text, uuid, varchar } from "drizzle-orm/pg-core"
+import { relations } from "drizzle-orm"
+import {
+  check,
+  date,
+  index,
+  integer,
+  pgTable,
+  text,
+  uuid,
+  varchar,
+} from "drizzle-orm/pg-core"
+import { gte } from "../sql/operators"
+
+const dateProperties = {
+  createdDate: date("created_date").defaultNow(),
+}
 
 const userProperties = pgTable(
   "user_properties",
@@ -10,8 +24,9 @@ const userProperties = pgTable(
       onUpdate: "cascade",
     }),
     starNum: integer("star_num").default(0),
+    ...dateProperties,
   },
-  (t) => [index().on(t.storeId), check("star_num_gte_0", sql`${t.starNum} >= 0`)],
+  (t) => [index().on(t.storeId), check("star_num_gte_0", gte(t.starNum, 0))],
 )
 
 const usersRelations = relations(userProperties, ({ one, many }) => ({
@@ -25,6 +40,7 @@ const usersRelations = relations(userProperties, ({ one, many }) => ({
 const stores = pgTable("stores", {
   id: uuid("id").primaryKey().defaultRandom(),
   name: varchar("name", { length: 255 }),
+  ...dateProperties,
 })
 
 const storesRelations = relations(stores, ({ many }) => ({
@@ -47,10 +63,11 @@ const goods = pgTable(
     name: varchar("name", { length: 255 }),
     description: text("description"),
     star_price: integer("star_price").default(0),
+    ...dateProperties,
   },
   (t) => [
     index().on(t.storeId, t.userId),
-    check("star_price_gte_0", sql`${t.star_price} >= 0`),
+    check("star_price_gte_0", gte(t.star_price, 0)),
   ],
 )
 
