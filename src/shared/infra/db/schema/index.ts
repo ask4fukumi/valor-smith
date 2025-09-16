@@ -43,8 +43,12 @@ const stores = pgTable("stores", {
   ...dateProperties,
 })
 
-const storesRelations = relations(stores, ({ many }) => ({
-  users: many(userProperties),
+const storesRelations = relations(stores, ({ many, one }) => ({
+  members: many(userProperties),
+  creator: one(userProperties, {
+    fields: [stores.id],
+    references: [userProperties.storeId],
+  }),
   goods: many(goods),
 }))
 

@@ -19,14 +19,14 @@
     "typescript-language-server": {
       "binary": {
         "path": "bunx",
-        "arguments": ["--bun", "typescript-language-server", "--stdio"]
+        "arguments": ["typescript-language-server", "--stdio"]
       }
     },
 
     "tailwindcss-language-server": {
       "binary": {
         "path": "bunx",
-        "arguments": ["--bun", "tailwindcss-language-server", "--stdio"]
+        "arguments": ["tailwindcss-language-server", "--stdio"]
       },
 
       "settings": {
@@ -38,14 +38,14 @@
     "biome": {
       "binary": {
         "path": "bunx",
-        "arguments": ["--bun", "biome", "lsp-proxy"]
+        "arguments": ["biome", "lsp-proxy"]
       }
     },
 
     "vscode-css-language-server": {
       "binary": {
         "path": "bunx",
-        "arguments": ["--bun", "vscode-css-language-server", "--stdio"]
+        "arguments": ["vscode-css-language-server", "--stdio"]
       },
 
       "settings": {
