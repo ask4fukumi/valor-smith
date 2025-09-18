@@ -1,10 +1,10 @@
 "use server"
 
 import { StackHandler } from "@stackframe/stack"
-import { authApp } from "@/shared/infra/stack-auth"
+import { auth } from "@/shared/clients/auth.client"
 
 const StackAuthPage = (props: PageProps<"/stack-auth/[...stack]">) => {
-  return <StackHandler fullPage app={authApp} routeProps={props} />
+  return <StackHandler fullPage app={auth} routeProps={props} />
 }
 
 export default StackAuthPage
