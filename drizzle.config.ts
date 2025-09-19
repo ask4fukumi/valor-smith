@@ -1,5 +1,5 @@
 import { defineConfig } from "drizzle-kit"
-import { getEnv } from "@/config/get-env"
+import { getEnv } from "@/shared/config/env"
 
 const env = getEnv()
 
@@ -7,7 +7,7 @@ const drizzleConfig = defineConfig({
   out: ".drizzle",
 
   dialect: "postgresql",
-  schema: "src/shared/infra/db/schema/index.ts",
+  schema: ["src/features/love-store/data/schemas/index.ts"],
   introspect: {
     casing: "camel",
   },
