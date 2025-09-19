@@ -23,8 +23,11 @@ src/
               qr.component.tsx
               qr.provider.tsx
               index.ts
+            index.ts
           app/                                    # use `ui` to create presentational-ready components
             qr-list.component.tsx
+            index.ts
+          index.ts
         server/
           actions/
             user.action.ts
@@ -39,10 +42,13 @@ src/
           middlewares/
             user-authenticate.middleware.ts
             index.ts
+        index.ts
       logic/
-        qr.handler/
-          qr-create.handler.ts
-          qr-delete.handler.ts
+        handlers/
+          qr.handler/
+            qr-create.handler.ts
+            qr-delete.handler.ts
+            index.ts
           index.ts
         index.ts
       data/
@@ -59,10 +65,11 @@ src/
         clients/
           db-node.client.ts
           index.ts
-      types/
+      contracts/
+        qr.schema.ts                            # zod schema
         user.type.ts
         index.ts
-      index.ts                                    # only export from `presentation`
+    index.ts                                      # only export from `presentation`
   shared/
     presentation/
       components/
@@ -115,6 +122,11 @@ src/
         env.config.ts
         index.ts
 ```
+
+- Items inside `<feature>/presentation` can only import from their siblings, `<feature>/logic` and anything from `shared`
+- Items inside `<feature>/logic` can only import from their siblings, `<feature>/data` and anything from `shared`
+- Items inside `<feature>/data` can only import from anything in `shared`
+- Items inside `app` can only import from `features` and `shared`
 
 ## Naming convention
 

@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/shared/ui/components/button"
+import { Button } from "@/shared/presentation/components/ui/button"
 
-const StoreViewPage = () => {
+const StorePage = () => {
   return (
     <div>
       <Button variant="secondary">Create new store</Button>
@@ -11,4 +11,4 @@ const StoreViewPage = () => {
   )
 }
 
-export default StoreViewPage
+export default StorePage

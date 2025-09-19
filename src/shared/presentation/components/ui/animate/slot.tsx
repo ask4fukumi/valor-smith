@@ -16,7 +16,7 @@ type WithAsChild<Base extends object> =
   | (Base & { asChild?: false | undefined })
 
 type SlotProps<T extends HTMLElement = HTMLElement> = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint: @animate-ui
   children?: any
 } & DOMMotionProps<T>
 
