@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "typegen": "next typegen",
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
