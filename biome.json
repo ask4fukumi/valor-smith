@@ -53,7 +53,8 @@
   },
   "javascript": {
     "formatter": {
-      "semicolons": "asNeeded"
+      "semicolons": "asNeeded",
+      "operatorLinebreak": "before"
     }
   }
 }
