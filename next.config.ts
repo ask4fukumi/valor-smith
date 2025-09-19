@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default function nextConfigFunction(): NextConfig {
+  return {
+    experimental: {
+      reactCompiler: true,
+      viewTransition: true,
+      inlineCss: true,
+      useLightningcss: true,
+    },
+    typedRoutes: true,
+  } satisfies NextConfig
+}

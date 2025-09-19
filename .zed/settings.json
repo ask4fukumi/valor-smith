@@ -1,11 +1,18 @@
+// $privacy
 // $language_server
 // $debugger
 // $formatter
 // $language-specific
 // $agent
+// $agent_server
 // $context_server
 
 {
+  // $privacy
+
+  "redact_private_values": false,
+  "private_files": ["**/*.env*"],
+
   // $language_server
 
   "lsp": {
@@ -24,7 +31,7 @@
 
       "settings": {
         "classAttributes": ["className"],
-        "classFunctions": []
+        "classFunctions": ["cn", "cva", "clsx", "tw", "tw\\.[a-z-]+"]
       }
     },
 
@@ -32,6 +39,21 @@
       "binary": {
         "path": "bunx",
         "arguments": ["biome", "lsp-proxy"]
+      }
+    },
+
+    "vscode-css-language-server": {
+      "binary": {
+        "path": "bunx",
+        "arguments": ["vscode-css-language-server", "--stdio"]
+      },
+
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
       }
     }
   },
@@ -48,7 +70,7 @@
         "..."
       ],
 
-      "prettier": { "allowed": false },
+      "format_on_save": "on",
       "formatter": [
         { "language_server": { "name": "biome" } },
         {
@@ -69,7 +91,7 @@
         "..."
       ],
 
-      "prettier": { "allowed": false },
+      "format_on_save": "on",
       "formatter": [
         { "language_server": { "name": "biome" } },
         {
@@ -90,7 +112,7 @@
         "..."
       ],
 
-      "prettier": { "allowed": false },
+      "format_on_save": "on",
       "formatter": [
         { "language_server": { "name": "biome" } },
         {
@@ -100,6 +122,33 @@
           }
         }
       ]
+    },
+
+    "CSS": {
+      "language_servers": [
+        "vscode-css-language-server",
+        "tailwindcss-language-server",
+        "..."
+      ],
+
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "vscode-css-language-server"
+          }
+        }
+      ]
+    }
+  },
+
+  // $context_server
+
+  "context_servers": {
+    "mcp-server-shadcn": {
+      "source": "custom",
+      "command": "bunx",
+      "args": ["--bun", "shadcn@latest", "mcp"]
     }
   }
 }
