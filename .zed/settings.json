@@ -58,11 +58,6 @@
     }
   },
 
-  // $formatter
-
-  "preferred_line_length": 89,
-  "tab_size": 2,
-
   // $language-specific
 
   "languages": {
@@ -137,7 +132,13 @@
       ],
 
       "format_on_save": "on",
-      "formatter": [{ "language_server": { "name": "vscode-css-language-server" } }]
+      "formatter": [
+        {
+          "language_server": {
+            "name": "vscode-css-language-server"
+          }
+        }
+      ]
     }
   },
 

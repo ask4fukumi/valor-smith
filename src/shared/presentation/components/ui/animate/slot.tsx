@@ -59,9 +59,9 @@ function Slot<T extends HTMLElement = HTMLElement>({
   ...props
 }: SlotProps<T>) {
   const isAlreadyMotion =
-    typeof children.type === "object" &&
-    children.type !== null &&
-    isMotionComponent(children.type)
+    typeof children.type === "object"
+    && children.type !== null
+    && isMotionComponent(children.type)
 
   const Base = React.useMemo(
     () =>
